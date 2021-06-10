@@ -1,0 +1,34 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row text-center m20">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <div class="container">
+                        <img mat-card-image src="../../../assets/loginlogo.png" alt="" class="logo-icon">
+                    </div>
+                    <h1 class="text-center">Welcome Back! Ready to resume?</h1>
+
+                    <form ngNativeValidate>
+                        <!-- Username field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input required name="username" matInput placeholder="Enter Username">
+                            <mat-hint>Your Exam Portal account username</mat-hint>
+                        </mat-form-field>
+                        <!-- Password field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" required name="password" matInput placeholder=" Enter Password">
+                            <mat-hint>Your Exam Portal account password</mat-hint>
+                        </mat-form-field>
+                        <div class="container text-center m20" style="margin: 20px;">
+                            <button type="submit" mat-raised-button color="accent">Login</button>
+                            <button type="reset" mat-raised-button color="primary" style="margin-left: 20px;">Clear
+                                details</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
