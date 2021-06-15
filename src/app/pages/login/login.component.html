@@ -7,18 +7,20 @@
                         <img mat-card-image src="../../../assets/loginlogo.png" alt="" class="logo-icon">
                     </div>
                     <h1 class="text-center">Welcome Back! Ready to resume?</h1>
-
-                    <form ngNativeValidate>
+                    <!--{{loginDetails | json}}-->
+                    <form (ngSubmit)="formLogin()" ngNativeValidate>
                         <!-- Username field -->
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Username</mat-label>
-                            <input required name="username" matInput placeholder="Enter Username">
+                            <input required name="username" [(ngModel)]="loginDetails.username" matInput
+                                placeholder="Enter Username">
                             <mat-hint>Your Exam Portal account username</mat-hint>
                         </mat-form-field>
                         <!-- Password field -->
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Password</mat-label>
-                            <input type="password" required name="password" matInput placeholder=" Enter Password">
+                            <input type="password" required [(ngModel)]="loginDetails.password" name="password" matInput
+                                placeholder=" Enter Password">
                             <mat-hint>Your Exam Portal account password</mat-hint>
                         </mat-form-field>
                         <div class="container text-center m20" style="margin: 20px;">

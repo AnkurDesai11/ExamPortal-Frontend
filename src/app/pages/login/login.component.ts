@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginDetails = {
+    username: '',
+    password: ''
+  }
+  constructor(private snack: MatSnackBar, private login: LoginService) { }
 
   ngOnInit(): void {
+  }
+  formLogin() {
+    console.log("login initiated");
+
+    //request server to generate token
+    this.login.generateToken(this.loginDetails).subscribe(
+      (data: any) => {
+        console.log("token generated");
+        console.log(data);
+        //user validate token generated, proceed with actual login
+        this.login.userLoggedIn(data.token);
+        this.login.getCurrentUser().subscribe(
+          (user: any) => {
+            this.login.setUser(user);
+            console.log(user.username);
+
+            //redirect to normal-user or admin-user dashboard
+
+
+          },
+        );
+      },
+      (error) => {
+        console.log("error while generating token");
+        console.log(error.error.text);
+        if (error.error.text == "Invalid Credentials  Bad credentials") {
+          this.snack.open("Invalid username and password combination", "OK", { duration: 2000, verticalPosition: "top" });
+        }
+      }
+    );
   }
 
 }
