@@ -48,7 +48,7 @@ export class LoginService {
   }
 
   //get user
-  public getuser() {
+  public getUser() {
     let user = localStorage.getItem('user');
     if (user != null) {
       return JSON.parse(user);
@@ -65,6 +65,6 @@ export class LoginService {
 
   //get user role/authority
   public getUserRole() {
-    return this.getuser().authorities[0].authority;
+    return this.getUser().authorities[0].authority;
   }
 }
