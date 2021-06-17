@@ -21,6 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { NormaluserGuard } from './services/normaluser.guard';
+import { AdminGuard } from './services/admin.guard';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     MatToolbarModule,
     MatIconModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, NormaluserGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,18 +14,18 @@
                             <mat-label>Username</mat-label>
                             <input required name="username" [(ngModel)]="loginDetails.username" matInput
                                 placeholder="Enter Username">
-                            <mat-hint>Your Exam Portal account username</mat-hint>
+                            <mat-hint>Your Exam Portal username</mat-hint>
                         </mat-form-field>
                         <!-- Password field -->
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Password</mat-label>
                             <input type="password" required [(ngModel)]="loginDetails.password" name="password" matInput
                                 placeholder=" Enter Password">
-                            <mat-hint>Your Exam Portal account password</mat-hint>
+                            <mat-hint>Your Exam Portal password</mat-hint>
                         </mat-form-field>
-                        <div class="container text-center m20" style="margin: 20px;">
+                        <div class="container text-center mt10">
                             <button type="submit" mat-raised-button color="accent">Login</button>
-                            <button type="reset" mat-raised-button color="primary" style="margin-left: 20px;">Clear
+                            <button type="reset" mat-raised-button color="primary" class="m10">Clear
                                 details</button>
                         </div>
                     </form>
