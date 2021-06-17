@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
+import { LoginGuard } from './services/login.guard';
 import { NormaluserGuard } from './services/normaluser.guard';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     pathMatch: 'full',
+    canActivate: [LoginGuard],
   },
   {
     path: 'admin-dashboard',
