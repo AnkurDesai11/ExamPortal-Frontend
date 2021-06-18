@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
         //error
         console.log(error);
         //lert("error");
-        this.snack.open("Error, please try again", "", { duration: 2000, verticalPosition: "top" })
+        this.snack.open("Error: " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
       }
     )
   }

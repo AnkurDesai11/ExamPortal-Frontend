@@ -23,6 +23,9 @@ import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-das
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { NormaluserGuard } from './services/normaluser.guard';
 import { AdminGuard } from './services/admin.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { MatListModule } from '@angular/material/list';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { AdminGuard } from './services/admin.guard';
     SignupComponent,
     HomeComponent,
     AdminDashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,8 @@ import { AdminGuard } from './services/admin.guard';
     MatSnackBarModule,
     MatCardModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   providers: [authInterceptorProviders, NormaluserGuard, AdminGuard],
   bootstrap: [AppComponent]
