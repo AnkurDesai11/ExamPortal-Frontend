@@ -1,1 +1,57 @@
-<p>profile works!</p>
+<mat-card *ngIf="user">
+    <mat-card-title>{{user.username}} - ID:{{user.id}}</mat-card-title>
+    <mat-card-subtitle>
+        {{user.firstName||user.lastName||user.phone?"Please update missing details using 'Edit' option below":"Profile
+        details"}}
+    </mat-card-subtitle>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container mt20">
+                <div class="container text-center">
+                    <img mat-card-image src="../../../assets/user-default-profile.png" alt=""
+                        class="logo-icon profile-pic">
+                    <h2>{{user.firstName}} {{user.lastName}}</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- details table -->
+                        <table class="table text-center">
+                            <tr>
+                                <td>Account Username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{user.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>First name</td>
+                                <td>{{user.firstName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td>{{user.lastName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Contact no</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled ?"Active":"Inactive"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="accent">EDIT</button>
+        <button mat-raised-button color="primary">SAVE</button>
+    </mat-card-actions>
+</mat-card>

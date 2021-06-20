@@ -26,6 +26,8 @@ import { AdminGuard } from './services/admin.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelocmeComponent } from './pages/admin/welocme/welocme.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
     AdminDashboardComponent,
     UserDashboardComponent,
     ProfileComponent,
-    SidebarComponent
+    SidebarComponent,
+    WelocmeComponent,
+
   ],
   imports: [
     BrowserModule,

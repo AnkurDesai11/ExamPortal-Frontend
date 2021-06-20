@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { WelocmeComponent } from './pages/admin/welocme/welocme.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -34,6 +35,10 @@ const routes: Routes = [
     //pathMatch: 'full',
     canActivate: [AdminGuard],
     children: [
+      {
+        path: '',
+        component: WelocmeComponent,
+      },
       {
         path: 'profile',
         component: ProfileComponent,
