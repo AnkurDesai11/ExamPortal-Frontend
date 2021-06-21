@@ -1,0 +1,73 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card *ngIf="currentUser">
+            <h1>Edit profile for - {{currentUser.username}} - ID:{{currentUser.id}}</h1>
+            <div class="row text-center">
+                <div class="col-md-6 offset-md-3">
+                    <form (ngSubmit)="formEditSubmit()" ngNativeValidate>
+                        <!-- Password field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" required [(ngModel)]="editDetails.password" name="password" matInput
+                                placeholder="Enter current password">
+                            <mat-hint>Enter current password to save changes
+                            </mat-hint>
+                        </mat-form-field>
+                        <!-- Email field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email Id</mat-label>
+                            <input required type="email" [(ngModel)]="currentUser.email" name="email" matInput
+                                value="{{currentUser.email}}" [formControl]="emailFormControl"
+                                placeholder="Enter email id">
+                            <mat-hint>Only one account per Email address</mat-hint>
+                        </mat-form-field>
+                        <!-- Firstname field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>First name</mat-label>
+                            <input [(ngModel)]="currentUser.firstName" name="firstName" matInput
+                                value="{{currentUser.firstName}}" placeholder="Enter first name">
+                            <mat-hint>Your first name</mat-hint>
+                        </mat-form-field>
+                        <!-- Lastname field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Last name</mat-label>
+                            <input [(ngModel)]="currentUser.lastName" name="lastName" matInput
+                                value="{{currentUser.lastName}}" placeholder="Enter last name">
+                            <mat-hint>Your last name</mat-hint>
+                        </mat-form-field>
+                        <!-- Contact no field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Contact number</mat-label>
+                            <input type="tel" [(ngModel)]="currentUser.phone" name="phone" matInput
+                                value="{{currentUser.phone}}" placeholder="Enter contact number">
+                            <mat-hint>Please include area/country code</mat-hint>
+                        </mat-form-field>
+                        <!--New Password field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" [(ngModel)]="currentUser.password" name="newpassword" matInput
+                                placeholder="If password change required">
+                            <mat-hint>Min length 8, atleast one " ! @ # $ % ^ & ", number, uppercase, lowercase
+                                letter
+                            </mat-hint>
+                        </mat-form-field>
+                        <!--Retype Password field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" [(ngModel)]="retype" name="retypepassword" matInput
+                                placeholder="If password change required">
+                            <mat-hint>Retype new password
+                            </mat-hint>
+                        </mat-form-field>
+                        <div class="container text-center mt10">
+                            <button type="submit" mat-raised-button color="accent">Save changes</button>
+                            <button type="reset" mat-raised-button color="primary" class="m10"
+                                routerLink="/admin-dashboard/profile">Back to profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </mat-card>
+
+    </div>
+</div>

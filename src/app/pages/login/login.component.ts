@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       (data: any) => {
         console.log("token generated");
         console.log(data);
-        //user validate token generated, proceed with actual login
+        //user validation token generated, proceed with actual login
         this.login.userLoggedIn(data.token);
         this.login.getCurrentUser().subscribe(
           (user: any) => {

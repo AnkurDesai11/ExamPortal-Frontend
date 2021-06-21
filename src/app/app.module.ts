@@ -27,6 +27,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelocmeComponent } from './pages/admin/welocme/welocme.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { WelocmeComponent } from './pages/admin/welocme/welocme.component';
     ProfileComponent,
     SidebarComponent,
     WelocmeComponent,
+    EditProfileComponent,
 
   ],
   imports: [

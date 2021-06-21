@@ -1,7 +1,8 @@
 <mat-card *ngIf="user">
     <mat-card-title>{{user.username}} - ID:{{user.id}}</mat-card-title>
     <mat-card-subtitle>
-        {{user.firstName||user.lastName||user.phone?"Please update missing details using 'Edit' option below":"Profile
+        {{user.firstName && user.lastName && user.phone?"Please update missing details using 'Edit' option
+        below":"Profile
         details"}}
     </mat-card-subtitle>
     <mat-card-content>
@@ -51,7 +52,8 @@
         </div>
     </mat-card-content>
     <mat-card-actions class="text-center">
-        <button mat-raised-button color="accent">EDIT</button>
-        <button mat-raised-button color="primary">SAVE</button>
+        <button mat-raised-button color="accent" routerLink="/admin-dashboard/edit-profile">Edit profile
+            details</button>
+        <!-- <button mat-raised-button color="primary"></button> -->
     </mat-card-actions>
 </mat-card>
