@@ -71,4 +71,9 @@ export class LoginService {
   public getUserRole() {
     return this.getUser().authorities[0].authority;
   }
+
+  //verify password to edit profile
+  public passwordVerfiy(editDetails: any) {
+    return this.http.post(`${baseUrl}/user/edit-auth`, editDetails);
+  }
 }

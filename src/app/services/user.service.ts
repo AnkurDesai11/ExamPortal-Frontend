@@ -13,4 +13,8 @@ export class UserService {
   public addUser(user: any) {
     return this.http.post(`${baseUrl}/user/`, user);
   }
+  //editing user
+  public editUser(verifiedUser: any) {
+    return this.http.put(`${baseUrl}/user/`, verifiedUser);
+  }
 }

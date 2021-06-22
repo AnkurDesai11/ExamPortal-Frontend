@@ -44,7 +44,7 @@
                         </mat-form-field>
                         <!--New Password field -->
                         <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Password</mat-label>
+                            <mat-label>New Password</mat-label>
                             <input type="password" [(ngModel)]="currentUser.password" name="newpassword" matInput
                                 placeholder="If password change required">
                             <mat-hint>Min length 8, atleast one " ! @ # $ % ^ & ", number, uppercase, lowercase
@@ -53,14 +53,18 @@
                         </mat-form-field>
                         <!--Retype Password field -->
                         <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Password</mat-label>
+                            <mat-label>New Password</mat-label>
                             <input type="password" [(ngModel)]="retype" name="retypepassword" matInput
                                 placeholder="If password change required">
-                            <mat-hint>Retype new password
+                            <mat-hint>{{(currentUser.password)==(retype)?"Retype new password":"Retyped new
+                                password does
+                                not match"}}
                             </mat-hint>
                         </mat-form-field>
                         <div class="container text-center mt10">
-                            <button type="submit" mat-raised-button color="accent">Save changes</button>
+                            <button type="submit" [disabled]="!((currentUser.password)==(retype))" mat-raised-button
+                                color="accent">Save
+                                changes</button>
                             <button type="reset" mat-raised-button color="primary" class="m10"
                                 routerLink="/admin-dashboard/profile">Back to profile</button>
                         </div>
