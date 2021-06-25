@@ -28,6 +28,8 @@ import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelocmeComponent } from './pages/admin/welocme/welocme.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 
 
 @NgModule({
@@ -44,6 +46,8 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     SidebarComponent,
     WelocmeComponent,
     EditProfileComponent,
+    ViewCategoriesComponent,
+    AddCategoryComponent,
 
   ],
   imports: [

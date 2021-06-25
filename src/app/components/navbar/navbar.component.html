@@ -14,7 +14,7 @@
         <mat-icon>app_registration</mat-icon>
     </a>
     <a *ngIf="isLoggedIn" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
-        title="Profile">
+        title="Profile" routerLink="/login">
         <!--<mat-icon>logout</mat-icon>-->
         {{ user.username }}
     </a>

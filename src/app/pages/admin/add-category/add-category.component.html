@@ -1,0 +1,29 @@
+<mat-card>
+    <h2>Add Category</h2>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form (ngSubmit)="formAddSubmit()" ngNativeValidate>
+                        <!-- category title -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Title</mat-label>
+                            <input required type="text" [(ngModel)]="category.title" name="title" matInput
+                                placeholder="Enter category title">
+                        </mat-form-field>
+                        <!-- category description -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Description</mat-label>
+                            <textarea required name="description" [(ngModel)]="category.description" matInput
+                                placeholder="Enter category description"></textarea>
+                        </mat-form-field>
+
+                        <div class="container text-center mt20">
+                            <button mat-raised-button color="accent">Add Category</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

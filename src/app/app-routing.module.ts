@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { WelocmeComponent } from './pages/admin/welocme/welocme.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -47,6 +49,14 @@ const routes: Routes = [
       {
         path: 'edit-profile',
         component: EditProfileComponent,
+      },
+      {
+        path: 'categories',
+        component: ViewCategoriesComponent,
+      },
+      {
+        path: 'add-category',
+        component: AddCategoryComponent,
       }
     ]
   },
