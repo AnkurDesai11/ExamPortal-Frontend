@@ -5,6 +5,8 @@
             <mat-icon mat-list-icon>topic</mat-icon>
             <div mat-line>{{ c.title }}</div>
             <div mat-line>{{ c.description }}</div>
+            <button mat-raised-button color="accent" (click)="onEdit(c.cId)">Edit</button>
+            <button mat-raised-button class="m10" color="primary" (click)="onDelete(c)">Delete</button>
             <mat-divider></mat-divider>
         </mat-list-item>
     </mat-list>

@@ -30,6 +30,7 @@ import { WelocmeComponent } from './pages/admin/welocme/welocme.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { EditCategoryComponent } from './pages/admin/edit-category/edit-category.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     EditProfileComponent,
     ViewCategoriesComponent,
     AddCategoryComponent,
+    EditCategoryComponent,
 
   ],
   imports: [

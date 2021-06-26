@@ -8,7 +8,7 @@ import baseUrl from './helper';
 })
 export class LoginService {
 
-  //create event to dynamically load alues on login/logout in componenets like navbar
+  //create event to dynamically load values on login/logout in componenets like navbar
   public loginStatusSubject = new Subject<boolean>();
 
   constructor(private http: HttpClient) { }
