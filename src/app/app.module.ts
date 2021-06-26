@@ -31,6 +31,7 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { EditCategoryComponent } from './pages/admin/edit-category/edit-category.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { EditCategoryComponent } from './pages/admin/edit-category/edit-category
     ViewCategoriesComponent,
     AddCategoryComponent,
     EditCategoryComponent,
+    ViewQuizzesComponent,
 
   ],
   imports: [

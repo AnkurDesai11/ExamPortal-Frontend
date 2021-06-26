@@ -92,6 +92,7 @@ export class EditProfileComponent implements OnInit {
               }
             );
             Swal.fire("Success", "Details updated for: " + updatedUser.username, "success");
+            this.router.navigate(['/admin-dashboard/profile/']);
           },
           (updateError) => {
             this.editDetails.password = "";
