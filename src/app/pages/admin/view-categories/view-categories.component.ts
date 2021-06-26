@@ -22,10 +22,10 @@ export class ViewCategoriesComponent implements OnInit {
     this._category.categories().subscribe(
       (data: any) => {
         this.categories = data;
-        console.log(this.categories);
+        //console.log(this.categories);
       },
       (error) => {
-        console.log(error);
+        //console.log(error);
         this._snack.open("Server Error while loading categories: " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
       }
     );
