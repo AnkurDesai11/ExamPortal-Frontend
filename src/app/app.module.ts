@@ -32,6 +32,9 @@ import { ViewCategoriesComponent } from './pages/admin/view-categories/view-cate
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { EditCategoryComponent } from './pages/admin/edit-category/edit-category.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -52,6 +55,7 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
     AddCategoryComponent,
     EditCategoryComponent,
     ViewQuizzesComponent,
+    AddQuizComponent,
 
   ],
   imports: [
@@ -68,7 +72,9 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatSlideToggleModule,
+    MatSelectModule,
   ],
   providers: [authInterceptorProviders, NormaluserGuard, AdminGuard],
   bootstrap: [AppComponent]
