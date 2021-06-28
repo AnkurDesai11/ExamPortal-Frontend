@@ -55,8 +55,8 @@ export class ViewCategoriesComponent implements OnInit {
                   //console.log(this.categories);
                 },
                 (error) => {
-                  console.log(error);
-                  this._snack.open("Server Error while loading categories: " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
+                  //console.log(error);
+                  this._snack.open("Server Error while deleting category: " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
                 }
               );
               Swal.fire('Category: ' + category.title + " deleted", '', 'success');

@@ -32,7 +32,7 @@ export class AddCategoryComponent implements OnInit {
         this.category.title = '';
         this.category.description = '';
         Swal.fire("Done", "Category added successfully", "success");
-        this._router.navigate(['/admin-dashboard/categories']);
+        //this._router.navigate(['/admin-dashboard/categories']);
       },
       (error) => {
         console.log(error);
