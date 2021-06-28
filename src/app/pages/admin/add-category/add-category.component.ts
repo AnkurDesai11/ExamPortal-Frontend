@@ -22,9 +22,10 @@ export class AddCategoryComponent implements OnInit {
   }
 
   formAddSubmit() {
-    //if (this.category.title.trim() == "" || this.category.description.trim() == "" || this.category.title.trim() == null || this.category.description.trim() == null) {
-    //  this._snack.open("Title/Decription missing", "OK", { duration: 2000, verticalPosition: "top" });
-    //}
+    if (this.category.title.trim() == "" || this.category.description.trim() == "" || this.category.title.trim() == null || this.category.description.trim() == null) {
+      this._snack.open("Title/Decription missing", "OK", { duration: 2000, verticalPosition: "top" });
+      return;
+    }
 
     this._category.addCategory(this.category).subscribe(
       (data: any) => {

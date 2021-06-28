@@ -40,6 +40,11 @@ export class SignupComponent implements OnInit {
       return;
     }
 
+    if (this.user.username.trim() == '') {
+      this.snack.open("Username cannot be empty", "OK", { verticalPosition: "top" });
+      return;
+    }
+
     if ((this.user.phone != "" && this.user.phone != null) && !regexpcontact.test(this.user.phone)) {
       this.snack.open("Enter valid contact number", "OK", { duration: 2000, verticalPosition: "top" });
       return;

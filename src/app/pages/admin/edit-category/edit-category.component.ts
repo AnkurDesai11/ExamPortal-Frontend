@@ -20,20 +20,24 @@ export class EditCategoryComponent implements OnInit {
   }
   ngOnInit(): void {
     this.editedCategory.id = this._route.snapshot.params['id'];
-    console.log(this.editedCategory.id);
+    //console.log(this.editedCategory.id);
     this._category.category(this.editedCategory.id).subscribe(
       (data: any) => {
         this.editedCategory = data;
         //console.log(this.editedCategory);
       },
       (error) => {
-        console.log(error);
+        //console.log(error);
         this._snack.open("Server Error: " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
       }
     );
   }
 
   formEditSubmit() {
+    if (this.editedCategory.title.trim() == "" || this.editedCategory.description.trim() == "" || this.editedCategory.title.trim() == null || this.editedCategory.description.trim() == null) {
+      this._snack.open("Title/Decription missing", "OK", { duration: 2000, verticalPosition: "top" });
+      return;
+    }
     this._category.updateCategory(this.editedCategory).subscribe(
       (data: any) => {
         Swal.fire("Done", "Category added successfully", "success");
