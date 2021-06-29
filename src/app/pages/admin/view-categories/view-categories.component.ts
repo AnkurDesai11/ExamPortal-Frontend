@@ -34,6 +34,7 @@ export class ViewCategoriesComponent implements OnInit {
     );
   }
 
+  //directly use [routerLink]='"/admin-dashboard/add-category/"+c.cId' instead of (click)="onEdit(c.cId)"
   onEdit(id: any) {
     //console.log(id);
     this._router.navigate(['/admin-dashboard/edit-category/' + id]);

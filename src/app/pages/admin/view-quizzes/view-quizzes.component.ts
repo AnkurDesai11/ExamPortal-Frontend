@@ -29,10 +29,11 @@ export class ViewQuizzesComponent implements OnInit {
     );
   }
 
-  onEdit(id: any) {
-    //console.log(id);
-    this._router.navigate(['/admin-dashboard/edit-quiz/' + id]);
-  }
+  //directly use [routerLink]='"/admin-dashboard/add-quiz/"+q.qId' instead of (click)="onEdit(q.qId)"
+  //onEdit(id: any) {
+  //console.log(id);
+  //  this._router.navigate(['/admin-dashboard/edit-quiz/' + id]);
+  //}
 
   onDelete(quiz: any) {
     //console.log(quiz);

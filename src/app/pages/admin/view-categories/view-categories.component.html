@@ -7,7 +7,7 @@
         <mat-icon mat-list-icon>topic</mat-icon>&nbsp;{{ c.title }}
     </p>
     <div mat-line>{{ c.description }}</div>
-    <button mat-stroked-button color="accent" (click)="onEdit(c.cId)">Update</button>
+    <button mat-stroked-button color="accent" [routerLink]='"/admin-dashboard/add-quiz/"+q.qId'>Update</button>
     <button mat-stroked-button class="m10" color="warn" (click)="onDelete(c)">Delete</button>
 </mat-card>
 
