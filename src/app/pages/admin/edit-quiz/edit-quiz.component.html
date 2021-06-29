@@ -1,22 +1,22 @@
 <mat-card>
-    <mat-card-title>Add Quiz</mat-card-title>
+    <mat-card-title>Update Quiz</mat-card-title>
 </mat-card>
 <mat-card>
     <div class="bootstrap-wrapper">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <form (ngSubmit)="formAddSubmit()" ngNativeValidate>
+                <form (ngSubmit)="formEditSubmit()" ngNativeValidate>
                     <!-- quiz title -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Enter Title</mat-label>
-                        <input type="text" [(ngModel)]="quizData.title" name="title" required
+                        <input type="text" [(ngModel)]="editedQuizData.title" name="title" required
                             placeholder="Enter quiz title" matInput />
                     </mat-form-field>
 
                     <!-- quiz description -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Enter Description</mat-label>
-                        <textarea name="description" [(ngModel)]="quizData.description" required
+                        <textarea name="description" [(ngModel)]="editedQuizData.description" required
                             placeholder="Enter quiz description" matInput></textarea>
                     </mat-form-field>
 
@@ -25,7 +25,7 @@
                             <!-- max marks -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>Enter Maximum Score</mat-label>
-                                <input type="number" [(ngModel)]="quizData.maxMarks" required name="marks"
+                                <input type="number" [(ngModel)]="editedQuizData.maxMarks" required name="marks"
                                     placeholder="Enter maximum marks for quiz" matInput />
                             </mat-form-field>
                         </div>
@@ -33,8 +33,8 @@
                             <!-- max questions -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>Enter Number of Questions</mat-label>
-                                <input type="number" [(ngModel)]="quizData.numberOfQuestions" required name="questions"
-                                    placeholder="Enter total number of questions in quiz" matInput />
+                                <input type="number" [(ngModel)]="editedQuizData.numberOfQuestions" required
+                                    name="questions" placeholder="Enter total number of questions in quiz" matInput />
                             </mat-form-field>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <div class="col-md-6">
                             <!-- whether quiz is active or not -->
                             <mat-slide-toggle class="mt20 mb20" name="active" [color]="color"
-                                [(ngModel)]="quizData.active">
+                                [(ngModel)]="editedQuizData.active">
                                 Active on Portal
                             </mat-slide-toggle>
                         </div>
@@ -51,7 +51,7 @@
                             <!-- Parent Category of quiz -->
                             <mat-form-field [color]="color" appearance="outline">
                                 <mat-label>Category</mat-label>
-                                <mat-select name="category" [(ngModel)]="quizData.category.cId" required>
+                                <mat-select name="category" [(ngModel)]="editedQuizData.category.cId" required>
                                     <mat-option *ngFor="let c of categories" [value]="c.cId">
                                         {{c.title}}
                                     </mat-option>
@@ -63,8 +63,8 @@
                     <div class="container-fluid text-center">
 
 
-                        <!-- Add quiz button -->
-                        <button class="mt20" mat-raised-button color="accent" type="submit">Add
+                        <!-- Edit quiz button -->
+                        <button class="mt20" mat-raised-button color="accent" type="submit">Update
                             Quiz</button>
 
 

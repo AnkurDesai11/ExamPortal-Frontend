@@ -13,10 +13,13 @@ export class ViewCategoriesComponent implements OnInit {
 
   constructor(private _category: CategoryService, private _snack: MatSnackBar, private _router: Router) { }
 
-  categories: any = {
-    title: '',
-    description: ''
-  };
+  categories = [
+    {
+      cId: 0,
+      title: '',
+      description: ''
+    },
+  ];
 
   ngOnInit(): void {
     this._category.categories().subscribe(
@@ -32,7 +35,7 @@ export class ViewCategoriesComponent implements OnInit {
   }
 
   onEdit(id: any) {
-    console.log(id);
+    //console.log(id);
     this._router.navigate(['/admin-dashboard/edit-category/' + id]);
   }
 
@@ -49,16 +52,19 @@ export class ViewCategoriesComponent implements OnInit {
             //console.log(data);
 
             if (data) {
-              this._category.categories().subscribe(
-                (data: any) => {
-                  this.categories = data;
-                  //console.log(this.categories);
-                },
-                (error) => {
-                  //console.log(error);
-                  this._snack.open("Server Error while deleting category: " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
-                }
-              );
+              //   this._category.categories().subscribe(
+              //     (data: any) => {
+              //       this.categories = data;
+              //       //console.log(this.categories);
+              //     },
+              //     (error) => {
+              //       //console.log(error);
+              //       this._snack.open("Server Error while deleting category: " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
+              //     }
+              //   );
+              //No need to call server to reload categories to remove deleted category, can do the same by filter
+
+              this.categories = this.categories.filter((categories: any) => categories.cId != category.cId);
               Swal.fire('Category: ' + category.title + " deleted", '', 'success');
             }
             else {

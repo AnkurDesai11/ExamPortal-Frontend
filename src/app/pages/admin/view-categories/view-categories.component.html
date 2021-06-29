@@ -7,8 +7,8 @@
         <mat-icon mat-list-icon>topic</mat-icon>&nbsp;{{ c.title }}
     </p>
     <div mat-line>{{ c.description }}</div>
-    <button mat-raised-button color="accent" (click)="onEdit(c.cId)">Edit</button>
-    <button mat-raised-button class="m10" color="primary" (click)="onDelete(c)">Delete</button>
+    <button mat-stroked-button color="accent" (click)="onEdit(c.cId)">Update</button>
+    <button mat-stroked-button class="m10" color="warn" (click)="onDelete(c)">Delete</button>
 </mat-card>
 
 <mat-card>

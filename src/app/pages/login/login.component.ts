@@ -56,6 +56,9 @@ export class LoginComponent implements OnInit {
         if (error.error.text == "Invalid Credentials  Bad credentials") {
           this.snack.open("Invalid username and password combination", "OK", { duration: 2000, verticalPosition: "top" });
         }
+        else {
+          this.snack.open("Error while connecting to server, please try again", "OK", { duration: 2000, verticalPosition: "top" });
+        }
       }
     );
   }

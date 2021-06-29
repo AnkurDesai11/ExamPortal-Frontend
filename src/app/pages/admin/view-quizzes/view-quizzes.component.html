@@ -11,15 +11,16 @@
         <p>{{q.description}}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-stroked-button class="m10">Questions</button>
         <button mat-stroked-button class="m10">Max Marks: {{q.maxMarks}}</button>
         <button mat-stroked-button class="m10">Total Questions: {{q.numberOfQuestions}}</button>
-        <button mat-stroked-button class="m10">Attempts</button>
-        <button mat-stroked-button class="m10">Update</button>
+        <button mat-stroked-button class="m10" color="accent">Questions</button>
+        <button mat-stroked-button class="m10" color="accent">Attempts</button>
+        <button mat-stroked-button class="m10" color="accent" (click)="onEdit(q.qId)">Update</button>
+        <button mat-stroked-button class=" m10" color="warn" (click)="onDelete(q)">Delete</button>
     </mat-card-actions>
 </mat-card>
 <mat-card>
-    <div class="container text-center">
+    <div class=" container text-center">
         <button mat-raised-button color="accent" routerLink="/admin-dashboard/add-quiz">Add new quiz</button>
     </div>
 </mat-card>
