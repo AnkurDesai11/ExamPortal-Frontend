@@ -13,7 +13,8 @@
     <mat-card-actions>
         <button mat-stroked-button class="m10">Max Marks: {{q.maxMarks}}</button>
         <button mat-stroked-button class="m10">Total Questions: {{q.numberOfQuestions}}</button>
-        <button mat-stroked-button class="m10" color="accent">Questions</button>
+        <button mat-stroked-button class="m10" color="accent"
+            [routerLink]='"/admin-dashboard/view-questions/"+q.qId+"/"+q.title'>Questions</button>
         <button mat-stroked-button class="m10" color="{{q.active?'primary':'warn'}}">Attempts</button>
         <button mat-stroked-button class="m10" color="accent"
             [routerLink]='"/admin-dashboard/edit-quiz/"+q.qId'>Update</button>

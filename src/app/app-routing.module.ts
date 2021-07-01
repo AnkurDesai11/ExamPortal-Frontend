@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-das
 import { EditCategoryComponent } from './pages/admin/edit-category/edit-category.component';
 import { EditQuizComponent } from './pages/admin/edit-quiz/edit-quiz.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { WelocmeComponent } from './pages/admin/welocme/welocme.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
@@ -77,6 +78,10 @@ const routes: Routes = [
       {
         path: 'edit-quiz/:id',
         component: EditQuizComponent,
+      },
+      {
+        path: 'view-questions/:id/:title',
+        component: ViewQuizQuestionsComponent,
       },
     ]
   },
