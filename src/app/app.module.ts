@@ -37,6 +37,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { EditQuizComponent } from './pages/admin/edit-quiz/edit-quiz.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/vi
     AddQuizComponent,
     EditQuizComponent,
     ViewQuizQuestionsComponent,
+    AddQuestionComponent,
 
   ],
   imports: [

@@ -19,19 +19,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   formLogin() {
-    console.log("login initiated");
+    //console.log("login initiated");
 
     //request server to generate token
     this.login.generateToken(this.loginDetails).subscribe(
       (data: any) => {
-        console.log("token generated");
-        console.log(data);
+        //console.log("token generated");
+        //console.log(data);
         //user validation token generated, proceed with actual login
         this.login.userLoggedIn(data.token);
         this.login.getCurrentUser().subscribe(
           (user: any) => {
             this.login.setUser(user);
-            console.log(user.username);
+            //console.log(user.username);
 
             //redirect to normal-user or admin-user dashboard
             if (this.login.getUserRole() == "ADMIN") {
@@ -51,8 +51,8 @@ export class LoginComponent implements OnInit {
         );
       },
       (error) => {
-        console.log("error while generating token");
-        console.log(error.error.text);
+        //console.log("error while generating token");
+        //console.log(error.error.text);
         if (error.error.text == "Invalid Credentials  Bad credentials") {
           this.snack.open("Invalid username and password combination", "OK", { duration: 2000, verticalPosition: "top" });
         }
