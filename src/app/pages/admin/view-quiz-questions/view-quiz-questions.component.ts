@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
-import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-view-quiz-questions',

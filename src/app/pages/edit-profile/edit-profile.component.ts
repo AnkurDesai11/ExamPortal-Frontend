@@ -48,7 +48,7 @@ export class EditProfileComponent implements OnInit {
     let regexpcontact = new RegExp('^[- +()0-9]{6,15}$');
     let regexppassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&]).{8,}');
 
-    if ((this.currentUser.phone != "" && this.currentUser.phone != null) && !regexpcontact.test(this.currentUser.phone)) {
+    if ((this.currentUser.phone.trim() != "" && this.currentUser.phone != null) && !regexpcontact.test(this.currentUser.phone)) {
       this.snack.open("Enter valid contact number", "OK", { duration: 2000, verticalPosition: "top" });
       return;
     }

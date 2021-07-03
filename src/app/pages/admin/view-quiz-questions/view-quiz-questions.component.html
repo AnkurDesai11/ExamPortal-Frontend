@@ -13,19 +13,19 @@
                     <p><b>Q{{i+1}}) </b><span [innerHTML]="q.content"></span></p>
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-6">
-                                <p>1) {{q.option1}}</p>
+                            <div class="col-md-6" *ngIf="(q.option1.trim())==''||(q.option1)==null?false:true">
+                                <p>&bull; {{q.option1}}</p>
                             </div>
-                            <div class="col-md-6">
-                                <p>2) {{q.option2}}</p>
+                            <div class="col-md-6" *ngIf="(q.option2.trim())==''||(q.option2)==null?false:true">
+                                <p>&bull; {{q.option2}}</p>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p>3) {{q.option3}}</p>
+                            <!-- </div>
+                        <div class="row"> -->
+                            <div class="col-md-6" *ngIf="(q.option3.trim())==''||(q.option3)==null?false:true">
+                                <p>&bull; {{q.option3}}</p>
                             </div>
-                            <div class="col-md-6">
-                                <p>4) {{q.option4}}</p>
+                            <div class="col-md-6" *ngIf="(q.option4.trim())==''||(q.option4)==null?false:true">
+                                <p>&bull; {{q.option4}}</p>
                             </div>
                         </div>
                     </div>
