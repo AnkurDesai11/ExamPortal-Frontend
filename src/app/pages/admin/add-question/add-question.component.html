@@ -9,12 +9,14 @@
                 <form (ngSubmit)="formAddSubmit()" ngNativeValidate>
 
                     <!-- question content -->
-                    <mat-form-field class="full-width" appearance="outline">
+                    <!-- <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Enter Description</mat-label>
                         <textarea name="content" [(ngModel)]="question.content" required
                             placeholder="Enter quiz description" required matInput></textarea>
                         <mat-hint>Enter atleast 2 options</mat-hint>
-                    </mat-form-field>
+                    </mat-form-field> -->
+                    <ckeditor [editor]="Editor" name="content" [(ngModel)]="question.content"
+                        data="Enter question here"></ckeditor>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -85,7 +87,7 @@
                                             [value]="question.option4.trim()">
                                             {{question.option4}}</mat-option>
                                     </mat-select>
-                                    <mat-hint>Enter non-blank options</mat-hint>
+                                    <mat-hint>Enter atleast 2 options</mat-hint>
                                 </mat-form-field>
                             </div>
                             <div class="col-md-6">

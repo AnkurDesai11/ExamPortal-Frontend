@@ -39,6 +39,7 @@ import { EditQuizComponent } from './pages/admin/edit-quiz/edit-quiz.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { EditQuestionComponent } from './pages/admin/edit-question/edit-question.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { EditQuestionComponent } from './pages/admin/edit-question/edit-question
     MatListModule,
     MatSlideToggleModule,
     MatSelectModule,
+    CKEditorModule,
   ],
   providers: [authInterceptorProviders, NormaluserGuard, AdminGuard],
   bootstrap: [AppComponent]

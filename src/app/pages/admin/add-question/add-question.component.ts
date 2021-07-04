@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
-import { LoginComponent } from '../../login/login.component';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-question',
@@ -12,6 +12,7 @@ import { LoginComponent } from '../../login/login.component';
 })
 export class AddQuestionComponent implements OnInit {
 
+  public Editor = ClassicEditor;
   constructor(private _snack: MatSnackBar, private _question: QuestionService, private _route: ActivatedRoute) { }
   quizId: any;
   quizTitle: any;
@@ -47,7 +48,7 @@ export class AddQuestionComponent implements OnInit {
 
     this._question.addQuestionInQuiz(this.question).subscribe(
       (data: any) => {
-        console.log(data);
+        //console.log(data);
         Swal.fire('Success', 'Question added', 'success');
         this.question.content = '';
         this.question.option1 = '';

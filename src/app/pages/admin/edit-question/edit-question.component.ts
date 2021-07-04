@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-edit-question',
@@ -11,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class EditQuestionComponent implements OnInit {
 
+  public Editor = ClassicEditor;
   constructor(private _snack: MatSnackBar, private _question: QuestionService, private _route: ActivatedRoute, private _router: Router) { }
   quesId: any;
   quizId: any;
@@ -65,7 +67,7 @@ export class EditQuestionComponent implements OnInit {
 
     this._question.updateQuestion(this.editedQuestion).subscribe(
       (data: any) => {
-        console.log(data);
+        //console.log(data);
         Swal.fire('Success', 'Question edited', 'success');
         this.editedQuestion.content = '';
         this.editedQuestion.option1 = '';
