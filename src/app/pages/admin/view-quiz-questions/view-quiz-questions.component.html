@@ -32,10 +32,14 @@
                     <mat-divider></mat-divider>
                 </mat-card-content>
                 <mat-card-footer>
-                    <div class="container-fluid">
+                    <div class="container-fluid m10">
                         <div class="row">
-                            <div class="col-md-6">
-                                <p><b>Correct Answer: </b>{{q.answer}}</p>
+                            <div class="col-md-12">
+                                <b>Correct Answer: </b>{{q.answer}}
+                                <button mat-button color="accent"
+                                    [routerLink]='"/admin-dashboard/edit-question/"+quizId+"/"+quizTitle+"/"+q.quesId'>Update</button>
+                                <button mat-button color="warn" (click)="onDelete(q)">Delete</button>
+
                             </div>
                         </div>
                     </div>

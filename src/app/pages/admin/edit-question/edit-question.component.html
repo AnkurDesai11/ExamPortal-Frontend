@@ -1,17 +1,17 @@
 <mat-card>
-    <mat-card-title>Add Question in {{quizTitle}}</mat-card-title>
+    <mat-card-title>Edit Question in {{quizTitle}}</mat-card-title>
 </mat-card>
 <mat-card>
     <div class="bootstrap-wrapper">
         <div class="row">
             <div class="col-md-10 offset-md-1">
                 <mat-card-subtitle>Enter question details</mat-card-subtitle>
-                <form (ngSubmit)="formAddSubmit()" ngNativeValidate>
+                <form (ngSubmit)="formEditSubmit()" ngNativeValidate>
 
                     <!-- question content -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Enter Description</mat-label>
-                        <textarea name="content" [(ngModel)]="question.content" required
+                        <textarea name="content" [(ngModel)]="editedQuestion.content" required
                             placeholder="Enter quiz description" required matInput></textarea>
                         <mat-hint>Enter atleast 2 options</mat-hint>
                     </mat-form-field>
@@ -21,7 +21,7 @@
                             <!-- option 1 -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>Enter Option 1</mat-label>
-                                <input type="text" [(ngModel)]="question.option1" name="option1"
+                                <input type="text" [(ngModel)]="editedQuestion.option1" name="option1"
                                     placeholder="Enter option 1" matInput />
                             </mat-form-field>
                         </div>
@@ -29,7 +29,7 @@
                             <!-- option 2 -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>Enter Option 2</mat-label>
-                                <input type="text" [(ngModel)]="question.option2" name="option2"
+                                <input type="text" [(ngModel)]="editedQuestion.option2" name="option2"
                                     placeholder="Enter option 2" matInput />
                             </mat-form-field>
                         </div>
@@ -40,7 +40,7 @@
                             <!-- option 3 -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>Enter Option 3</mat-label>
-                                <input type="text" [(ngModel)]="question.option3" name="option3"
+                                <input type="text" [(ngModel)]="editedQuestion.option3" name="option3"
                                     placeholder="Enter option 3" matInput />
                             </mat-form-field>
                         </div>
@@ -48,7 +48,7 @@
                             <!-- option 4 -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>Enter Option 4</mat-label>
-                                <input type="text" [(ngModel)]="question.option4" name="option4"
+                                <input type="text" [(ngModel)]="editedQuestion.option4" name="option4"
                                     placeholder="Enter option 4" matInput />
                             </mat-form-field>
                         </div>
@@ -59,7 +59,7 @@
                             <div class="col-md-6">
                                 <mat-form-field appearance="outline">
                                     <mat-label>Answer</mat-label>
-                                    <mat-select name="answer" [(ngModel)]="question.answer" required>
+                                    <mat-select name="answer" [(ngModel)]="editedQuestion.answer" required>
                                         <!-- <mat-option>{{(question.option1)==''||(question.option1)==null?"Option
                                             1":question.option1}}</mat-option>
                                         <mat-option>{{(question.option2)==''||(question.option2)==null?"Option
@@ -69,28 +69,28 @@
                                         <mat-option>{{(question.option4)==''||(question.option4)==null?"Option
                                             4":question.option4}}</mat-option> -->
                                         <mat-option
-                                            *ngIf="(question.option1.trim())==''||(question.option1)==null?false:question.option1"
-                                            [value]="question.option1.trim()">
-                                            {{question.option1}}</mat-option>
+                                            *ngIf="(editedQuestion.option1.trim())==''||(editedQuestion.option1)==null?false:editedQuestion.option1"
+                                            [value]="editedQuestion.option1.trim()">
+                                            {{editedQuestion.option1}}</mat-option>
                                         <mat-option
-                                            *ngIf="(question.option2.trim())==''||(question.option2)==null?false:question.option2"
-                                            [value]="question.option2.trim()">
-                                            {{question.option2}}</mat-option>
+                                            *ngIf="(editedQuestion.option2.trim())==''||(editedQuestion.option2)==null?false:editedQuestion.option2"
+                                            [value]="editedQuestion.option2.trim()">
+                                            {{editedQuestion.option2}}</mat-option>
                                         <mat-option
-                                            *ngIf="(question.option3.trim())==''||(question.option3)==null?false:question.option3"
-                                            [value]="question.option3.trim()">
-                                            {{question.option3}}</mat-option>
+                                            *ngIf="(editedQuestion.option3.trim())==''||(editedQuestion.option3)==null?false:editedQuestion.option3"
+                                            [value]="editedQuestion.option3.trim()">
+                                            {{editedQuestion.option3}}</mat-option>
                                         <mat-option
-                                            *ngIf="(question.option4.trim())==''||(question.option4)==null?false:question.option4"
-                                            [value]="question.option4.trim()">
-                                            {{question.option4}}</mat-option>
+                                            *ngIf="(editedQuestion.option4.trim())==''||(editedQuestion.option4)==null?false:editedQuestion.option4"
+                                            [value]="editedQuestion.option4.trim()">
+                                            {{editedQuestion.option4}}</mat-option>
                                     </mat-select>
                                     <mat-hint>Enter non-blank options</mat-hint>
                                 </mat-form-field>
                             </div>
                             <div class="col-md-6">
                                 <!-- Add quiz button -->
-                                <button class="m10" mat-raised-button color="accent" type="submit">Add
+                                <button class="m10" mat-raised-button color="accent" type="submit">Edit
                                     Question</button>
 
 
@@ -108,4 +108,4 @@
         </div>
     </div>
 </mat-card>
-<!-- {{question|json}} -->
+<!-- {{editedQuestion|json}} -->
