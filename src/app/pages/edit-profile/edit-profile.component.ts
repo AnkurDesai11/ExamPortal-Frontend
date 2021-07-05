@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor(private snack: MatSnackBar, private login: LoginService, private user: UserService, private router: Router) { }
+  constructor(private snack: MatSnackBar, private login: LoginService, private user: UserService, private router: Router, private _route: ActivatedRoute) { }
 
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -67,7 +67,7 @@ export class EditProfileComponent implements OnInit {
 
     console.log("edit profile initiated");
 
-    this.login.passwordVerfiy(this.editDetails).subscribe(
+    this.login.passwordVerify(this.editDetails).subscribe(
       (user: any) => {
         this.verifiedUser.username = user.username;
         this.verifiedUser.password = this.newpswd;
@@ -84,7 +84,7 @@ export class EditProfileComponent implements OnInit {
             this.login.getCurrentUser().subscribe(
               (updatedUser: any) => {
                 this.login.setUser(updatedUser);
-                console.log(updatedUser.username);
+                //console.log(updatedUser.username);
                 this.retype = "";
                 this.newpswd = "";
                 this.editDetails.password = "";
@@ -92,7 +92,7 @@ export class EditProfileComponent implements OnInit {
               }
             );
             Swal.fire("Success", "Details updated for: " + updatedUser.username, "success");
-            this.router.navigate(['/admin-dashboard/profile/']);
+            this.router.navigate(['../profile'], { relativeTo: this._route });
           },
           (updateError) => {
             this.editDetails.password = "";

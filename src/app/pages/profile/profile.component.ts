@@ -12,17 +12,17 @@ export class ProfileComponent implements OnInit {
   constructor(private login: LoginService, private snack: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.user = this.login.getUser();
-    if (this.user == null) {
-      this.login.getCurrentUser().subscribe(
-        (user: any) => {
-          this.user = user;
-        },
-        (error) => {
-          this.snack.open("Error: Log in again - " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
-        }
-      );
-    }
+    // this.user = this.login.getUser();
+    // if (this.user == null) {
+    this.login.getCurrentUser().subscribe(
+      (user: any) => {
+        this.user = user;
+      },
+      (error) => {
+        this.snack.open("Error: Log in again - " + error.error.text, "", { duration: 2000, verticalPosition: "top" })
+      }
+    );
+    //}
   }
 
 }

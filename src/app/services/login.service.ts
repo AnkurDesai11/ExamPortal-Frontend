@@ -73,7 +73,7 @@ export class LoginService {
   }
 
   //verify password to edit profile
-  public passwordVerfiy(editDetails: any) {
+  public passwordVerify(editDetails: any) {
     return this.http.post(`${baseUrl}/user/edit-auth`, editDetails);
   }
 }
