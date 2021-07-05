@@ -98,8 +98,26 @@ const routes: Routes = [
   {
     path: 'user-dashboard',
     component: UserDashboardComponent,
-    pathMatch: 'full',
+    //pathMatch: 'full',
     canActivate: [NormaluserGuard],
+    children: [
+      // {
+      //   path: '',
+      //   component: WelocmeComponent,
+      // },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+      {
+        path: 'edit-profile',
+        component: EditProfileComponent,
+      },
+      {
+        path: 'edit-profile',
+        component: EditProfileComponent,
+      },
+    ]
   }
 
 ];
