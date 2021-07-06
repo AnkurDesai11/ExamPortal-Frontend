@@ -14,9 +14,14 @@ export class QuizService {
     return this._http.get(`${baseUrl}/quiz/`);
   }
 
-  //get all quizzes
+  //get single quiz
   public quiz(qid: any) {
     return this._http.get(`${baseUrl}/quiz/` + qid);
+  }
+
+  //get all quizzes in a category
+  public quizzesInCategory(catId: any) {
+    return this._http.get(`${baseUrl}/quiz/byCategory/` + catId);
   }
 
   //add quiz

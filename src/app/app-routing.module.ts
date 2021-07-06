@@ -17,6 +17,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { UserViewQuizzesInCategoryComponent } from './pages/user/user-view-quizzes-in-category/user-view-quizzes-in-category.component';
+import { UserViewQuizzesComponent } from './pages/user/user-view-quizzes/user-view-quizzes.component';
 import { AdminGuard } from './services/admin.guard';
 import { LoginGuard } from './services/login.guard';
 import { NormaluserGuard } from './services/normaluser.guard';
@@ -101,17 +103,17 @@ const routes: Routes = [
     //pathMatch: 'full',
     canActivate: [NormaluserGuard],
     children: [
-      // {
-      //   path: '',
-      //   component: WelocmeComponent,
-      // },
+      {
+        path: '',
+        component: UserViewQuizzesComponent,
+      },
       {
         path: 'profile',
         component: ProfileComponent,
       },
       {
-        path: 'edit-profile',
-        component: EditProfileComponent,
+        path: ':catId',
+        component: UserViewQuizzesInCategoryComponent,
       },
       {
         path: 'edit-profile',

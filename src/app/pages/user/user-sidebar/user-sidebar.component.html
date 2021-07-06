@@ -7,10 +7,7 @@
         <button mat-list-item routerLink="/user-dashboard/profile">
             <mat-icon mat-list-icon>account_circle</mat-icon>Profile
         </button>
-        <button mat-list-item routerLink="/user-dashboard/categories">
-            <mat-icon mat-list-icon>view_list</mat-icon>Quiz Categories
-        </button>
-        <button mat-list-item *ngFor="let c of categories" routerLink="/admin-dashboard/categories">
+        <button mat-list-item *ngFor="let c of categories" [routerLink]='"/user-dashboard/"+c.cId'>
             <mat-icon mat-list-icon>assignment</mat-icon>{{c.title}}
         </button>
     </mat-action-list>
