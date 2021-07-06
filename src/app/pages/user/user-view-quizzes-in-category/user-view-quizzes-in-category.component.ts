@@ -19,7 +19,7 @@ export class UserViewQuizzesInCategoryComponent implements OnInit {
     this.catId = this._route.snapshot.params['catId'];
     this._quiz.quizzesInCategory(this.catId).subscribe(
       (data: any) => {
-        //console.log(data);
+        console.log(data);
         this.quizzesInCategory = data;
       },
       (error) => {

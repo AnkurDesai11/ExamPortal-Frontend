@@ -102,7 +102,7 @@ const routes: Routes = [
     component: UserDashboardComponent,
     //pathMatch: 'full',
     canActivate: [NormaluserGuard],
-    children: [
+    children: [//order matters?!
       {
         path: '',
         component: UserViewQuizzesComponent,
@@ -112,12 +112,12 @@ const routes: Routes = [
         component: ProfileComponent,
       },
       {
-        path: ':catId',
-        component: UserViewQuizzesInCategoryComponent,
-      },
-      {
         path: 'edit-profile',
         component: EditProfileComponent,
+      },
+      {
+        path: ':catId',
+        component: UserViewQuizzesInCategoryComponent,
       },
     ]
   }

@@ -38,4 +38,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background:
 .full-width{
     width: 100%;
 }
-
+.truncate{
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
