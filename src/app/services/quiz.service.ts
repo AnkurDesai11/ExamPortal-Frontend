@@ -21,7 +21,7 @@ export class QuizService {
 
   //get all quizzes in a category
   public quizzesInCategory(catId: any) {
-    return this._http.get(`${baseUrl}/quiz/byCategory/` + catId);
+    return this._http.get(`${baseUrl}/quiz/category/` + catId);
   }
 
   //add quiz
