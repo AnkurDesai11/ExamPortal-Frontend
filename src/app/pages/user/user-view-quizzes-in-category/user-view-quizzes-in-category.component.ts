@@ -16,17 +16,20 @@ export class UserViewQuizzesInCategoryComponent implements OnInit {
   constructor(private _quiz: QuizService, private _snack: MatSnackBar, private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.catId = this._route.snapshot.params['catId'];
-    this._quiz.quizzesInCategory(this.catId).subscribe(
-      (data: any) => {
-        console.log(data);
-        this.quizzesInCategory = data;
-      },
-      (error) => {
-        console.log(error);
-        this._snack.open("Server Error while loading quizzes: " + error.error.text, "", { duration: 2000, verticalPosition: "top" });
-      }
-    );
+    this._route.params.subscribe((params) => {
+      //console.log(params);
+      this.catId = params['catId'];
+      this._quiz.quizzesInCategory(this.catId).subscribe(
+        (data: any) => {
+          //console.log(data);
+          this.quizzesInCategory = data;
+        },
+        (error) => {
+          console.log(error);
+          this._snack.open("Server Error while loading quizzes: " + error.error.text, "", { duration: 2000, verticalPosition: "top" });
+        }
+      );
+    })
   }
 
 }
