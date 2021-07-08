@@ -3,7 +3,7 @@
         <h2 class="m10">{{quizzesInCategory.length!=0?"All quizzes in "+quizzesInCategory[0].category.title:
             "Coming soon"}}</h2>
         <div class="row" *ngIf="quizzesInCategory">
-            <div class="col-md-4" *ngFor="let q of quizzesInCategory">
+            <div class="col-md-4 mb10" *ngFor="let q of quizzesInCategory">
                 <mat-card>
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image"></div>

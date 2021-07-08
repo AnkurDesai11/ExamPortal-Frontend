@@ -14,6 +14,11 @@ export class QuizService {
     return this._http.get(`${baseUrl}/quiz/`);
   }
 
+  //get all active quizzes
+  public activeQuizzes() {
+    return this._http.get(`${baseUrl}/quiz/active`);
+  }
+
   //get single quiz
   public quiz(qid: any) {
     return this._http.get(`${baseUrl}/quiz/` + qid);
@@ -22,6 +27,11 @@ export class QuizService {
   //get all quizzes in a category
   public quizzesInCategory(catId: any) {
     return this._http.get(`${baseUrl}/quiz/category/` + catId);
+  }
+
+  //get all active quizzes in a category
+  public activeQuizzesInCategory(catId: any) {
+    return this._http.get(`${baseUrl}/quiz/active/category/` + catId);
   }
 
   //add quiz

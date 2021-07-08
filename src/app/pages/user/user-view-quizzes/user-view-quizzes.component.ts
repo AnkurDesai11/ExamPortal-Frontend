@@ -14,7 +14,7 @@ export class UserViewQuizzesComponent implements OnInit {
   constructor(private _quiz: QuizService, private _snack: MatSnackBar) { }
 
   ngOnInit(): void {
-    this._quiz.quizzes().subscribe(
+    this._quiz.activeQuizzes().subscribe(
       (data: any) => {
         //console.log(data);
         this.quizzes = data;

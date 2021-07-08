@@ -19,7 +19,7 @@ export class UserViewQuizzesInCategoryComponent implements OnInit {
     this._route.params.subscribe((params) => {
       //console.log(params);
       this.catId = params['catId'];
-      this._quiz.quizzesInCategory(this.catId).subscribe(
+      this._quiz.activeQuizzesInCategory(this.catId).subscribe(
         (data: any) => {
           //console.log(data);
           this.quizzesInCategory = data;
