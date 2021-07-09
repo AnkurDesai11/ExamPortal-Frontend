@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            Read the following instructions carefully
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            Once done click the start button
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="mt10">
+                        <div class="container">
+                            <h2>{{quiz.title}} - quiz</h2>
+                            <p>{{quiz.description}}</p>
+                            <br />
+                            <h3>Pattern</h3>
+                            <ul>
+                                <li>Each question has <b>only 1 answer</b> from the options given.</li>
+                                <li>Number of questions - <b>{{quiz.numberOfQuestions}} questions</b></li>
+                                <li>Total time for the quiz - <b>{{quiz.numberOfQuestions*2}} minutes</b></li>
+                                <li>You should try to attempt each question in <b>90 seconds</b> on average.</li>
+                                <li>Total Marks - <b>{{quiz.maxMarks}}</b></li>
+                                <li>Each question carries <b>equal weightage</b> of marks. No negative marking.</li>
+                                <li>Time for the quiz will start once the <b>Start Quiz</b> button is clicked</li>
+                                <li>Scroll down to see the all the questions of the quiz</li>
+                                <li>Once you have attempted all the questions of the quiz you may click the
+                                    <b>Submit</b> buttom to submit and finish the quiz
+                                </li>
+                                <li>Click the <b>Start Quiz</b> button to begin</li>
+                            </ul>
+                        </div>
+                        <div class="container text-center mt20">
+                            <button mat-raised-button color="accent"
+                                [routerLink]='"/user-dashboard/instructions/"+quiz.qId'>Start
+                                Quiz</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
