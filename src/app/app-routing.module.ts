@@ -17,6 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { QuizInstructionsComponent } from './pages/user/quiz-instructions/quiz-instructions.component';
+import { QuizComponent } from './pages/user/quiz/quiz.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { UserViewQuizzesInCategoryComponent } from './pages/user/user-view-quizzes-in-category/user-view-quizzes-in-category.component';
 import { UserViewQuizzesComponent } from './pages/user/user-view-quizzes/user-view-quizzes.component';
@@ -124,8 +125,14 @@ const routes: Routes = [
         path: 'instructions/:qid',
         component: QuizInstructionsComponent,
       },
+
     ]
-  }
+  },
+  {
+    path: 'quiz/:qid',
+    component: QuizComponent,
+    canActivate: [NormaluserGuard],
+  },
 
 ];
 

@@ -1,0 +1,42 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-9">
+            <ng-container *ngIf="questions">
+                <h2 class="m10">Attempting quiz - {{questions[0].quiz.title}}</h2>
+            </ng-container>
+            <mat-card *ngFor="let q of questions; let i = index" class="mt10">
+                <mat-card-content>
+                    <p><b>Q{{i+1}})&nbsp;&nbsp;</b><span [innerHTML]="q.content"></span></p>
+                    <mat-divider></mat-divider>
+                    <mat-radio-group aria-label="Select an option">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 mt10" *ngIf="(q.option1.trim())==''||(q.option1)==null?false:true">
+                                    <mat-radio-button [value]="q.option1">{{q.option1}}</mat-radio-button>
+                                </div>
+                                <div class="col-md-6 mt10" *ngIf="(q.option2.trim())==''||(q.option2)==null?false:true">
+                                    <mat-radio-button [value]="q.option2">{{q.option2}}</mat-radio-button>
+                                </div>
+                                <div class="col-md-6 mt10" *ngIf="(q.option3.trim())==''||(q.option3)==null?false:true">
+                                    <mat-radio-button [value]="q.option3">{{q.option3}}</mat-radio-button>
+                                </div>
+                                <div class="col-md-6 mt10" *ngIf="(q.option4.trim())==''||(q.option4)==null?false:true">
+                                    <mat-radio-button [value]="q.option4">{{q.option4}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                            </div>
+                        </div>
+                    </mat-radio-group>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+</div>

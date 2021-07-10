@@ -44,6 +44,8 @@ import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.com
 import { UserViewQuizzesComponent } from './pages/user/user-view-quizzes/user-view-quizzes.component';
 import { UserViewQuizzesInCategoryComponent } from './pages/user/user-view-quizzes-in-category/user-view-quizzes-in-category.component';
 import { QuizInstructionsComponent } from './pages/user/quiz-instructions/quiz-instructions.component';
+import { QuizComponent } from './pages/user/quiz/quiz.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -73,6 +75,7 @@ import { QuizInstructionsComponent } from './pages/user/quiz-instructions/quiz-i
     UserViewQuizzesComponent,
     UserViewQuizzesInCategoryComponent,
     QuizInstructionsComponent,
+    QuizComponent,
 
   ],
   imports: [
@@ -93,6 +96,7 @@ import { QuizInstructionsComponent } from './pages/user/quiz-instructions/quiz-i
     MatSlideToggleModule,
     MatSelectModule,
     CKEditorModule,
+    MatRadioModule,
   ],
   providers: [authInterceptorProviders, NormaluserGuard, AdminGuard],
   bootstrap: [AppComponent]

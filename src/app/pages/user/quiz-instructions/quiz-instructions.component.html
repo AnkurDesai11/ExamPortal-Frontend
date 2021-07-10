@@ -14,10 +14,10 @@
                     <mat-divider></mat-divider>
                     <mat-card-content class="mt10">
                         <div class="container">
-                            <h2>{{quiz.title}} - quiz</h2>
+                            <h2>{{quiz.title}} quiz</h2>
                             <p>{{quiz.description}}</p>
                             <br />
-                            <h3>Pattern</h3>
+                            <h3>Pattern and instruction</h3>
                             <ul>
                                 <li>Each question has <b>only 1 answer</b> from the options given.</li>
                                 <li>Number of questions - <b>{{quiz.numberOfQuestions}} questions</b></li>
@@ -34,8 +34,7 @@
                             </ul>
                         </div>
                         <div class="container text-center mt20">
-                            <button mat-raised-button color="accent"
-                                [routerLink]='"/user-dashboard/instructions/"+quiz.qId'>Start
+                            <button mat-raised-button color="accent" (click)="startQuiz()">Start
                                 Quiz</button>
                         </div>
                     </mat-card-content>
