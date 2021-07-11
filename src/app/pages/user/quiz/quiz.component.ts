@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-quiz',
@@ -38,4 +39,18 @@ export class QuizComponent implements OnInit {
     });
   }
 
+  submitQuiz() {
+    Swal.fire({
+      position: 'center',
+      title: 'Submit and finish ' + this.questions[0].quiz.title + ' quiz?',
+      showDenyButton: false,
+      showCancelButton: true,
+      confirmButtonText: `Yes`,
+      icon: 'warning',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //this._router.navigate(['/quiz/' + this.qId]);
+      }
+    })
+  }
 }

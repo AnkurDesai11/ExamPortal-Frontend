@@ -8,31 +8,39 @@
                 <form (ngSubmit)="formEditSubmit()" ngNativeValidate>
                     <!-- quiz title -->
                     <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Enter Title</mat-label>
+                        <mat-label>Title</mat-label>
                         <input type="text" [(ngModel)]="editedQuizData.title" name="title" required
                             placeholder="Enter quiz title" matInput />
                     </mat-form-field>
 
                     <!-- quiz description -->
                     <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Enter Description</mat-label>
+                        <mat-label>Description</mat-label>
                         <textarea name="description" [(ngModel)]="editedQuizData.description" required
                             placeholder="Enter quiz description" matInput></textarea>
                     </mat-form-field>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <!-- max marks -->
                             <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Enter Maximum Score</mat-label>
+                                <mat-label>Maximum Score</mat-label>
                                 <input type="number" [(ngModel)]="editedQuizData.maxMarks" required name="marks"
                                     placeholder="Enter maximum marks for quiz" matInput />
                             </mat-form-field>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <!-- total time -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Total Time</mat-label>
+                                <input type="number" [(ngModel)]="editedQuizData.totalTime" required name="time"
+                                    placeholder="Enter total time to attempt quiz" matInput />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
                             <!-- max questions -->
                             <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Enter Number of Questions</mat-label>
+                                <mat-label>Number of Questions</mat-label>
                                 <input type="number" [(ngModel)]="editedQuizData.numberOfQuestions" required
                                     name="questions" placeholder="Enter total number of questions in quiz" matInput />
                             </mat-form-field>

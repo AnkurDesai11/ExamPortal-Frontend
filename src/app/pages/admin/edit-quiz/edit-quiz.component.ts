@@ -38,6 +38,7 @@ export class EditQuizComponent implements OnInit {
     title: '',
     description: '',
     maxMarks: '',
+    totalTime: '',
     numberOfQuestions: '',
     active: false,
     category: {
@@ -74,8 +75,8 @@ export class EditQuizComponent implements OnInit {
       this._snack.open("Title and Description cannot be blank", "OK", { duration: 2000, verticalPosition: "top" });
       return;
     }
-    if (parseFloat(this.editedQuizData.maxMarks) < 1 || parseFloat(this.editedQuizData.numberOfQuestions) < 1) {
-      this._snack.open("Max marks/number of questions cannot be less than 1", "OK", { duration: 2000, verticalPosition: "top" });
+    if (parseFloat(this.editedQuizData.maxMarks) < 1 || parseFloat(this.editedQuizData.numberOfQuestions) < 1 || parseFloat(this.editedQuizData.totalTime) < 1) {
+      this._snack.open("Max marks/number of questions/total time cannot be less than 1", "OK", { duration: 2000, verticalPosition: "top" });
       return;
     }
 
