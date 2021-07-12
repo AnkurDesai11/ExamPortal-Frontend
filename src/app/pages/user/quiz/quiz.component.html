@@ -47,15 +47,15 @@
                 <mat-card>
                     <mat-card-header>
                         <mat-card-title>
-                            Time Left
+                            Time Left - {{getFormattedTime()}}
                         </mat-card-title>
                         <mat-card-subtitle>
                             Quiz will be auto submitted once time runs out
                         </mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <mat-spinner>
-
+                        <mat-spinner style="margin: auto" [color]="timerColor" mode=determinate
+                            [value]="(timer/(questions[0].quiz.totalTime * 60))*100">
                         </mat-spinner>
                     </mat-card-content>
                 </mat-card>

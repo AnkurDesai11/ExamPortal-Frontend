@@ -14,6 +14,8 @@ export class QuizComponent implements OnInit {
 
   questions: any = [];
   qId: any;
+  timer: any;
+  timerColor = "primary";
 
   constructor(private locationSt: LocationStrategy, private _route: ActivatedRoute, private _question: QuestionService, private _snack: MatSnackBar) { }
 
@@ -22,8 +24,10 @@ export class QuizComponent implements OnInit {
     this.qId = this._route.snapshot.params.qid;
     this._question.getRequiredQuestionsOfQuiz(this.qId).subscribe(
       (data) => {
-        //console.log(data);
+        console.log(data);
         this.questions = data;
+        this.timer = this.questions[0].quiz.totalTime * 60;
+        this.startTimer();
       },
       (error) => {
         console.log(error);
@@ -53,4 +57,27 @@ export class QuizComponent implements OnInit {
       }
     })
   }
+
+  startTimer() {
+    let timeout = window.setInterval(() => {
+      if (this.timer <= 0) {
+        this.submitQuiz();
+        clearInterval(timeout);
+      }
+      else {
+        this.timer--;
+        if (((this.timer / (this.questions[0].quiz.totalTime * 60)) * 100) <= 15) {
+          this.timerColor = "warn";
+        }
+      }
+    }, 1000)
+  }
+
+  getFormattedTime() {
+    let hr = Math.floor((this.timer / 60) / 60);
+    let min = Math.floor(this.timer / 60) - hr * 60;
+    let sec = this.timer - min * 60;
+    return `${hr}: ${min}: ${sec}`
+  }
+
 }
