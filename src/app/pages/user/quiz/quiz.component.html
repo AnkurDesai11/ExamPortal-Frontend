@@ -1,68 +1,86 @@
 <div class="bootstrap-wrapper">
     <div class="container-fluid">
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-9">
-            <ng-container *ngIf="questions">
-                <h2 class="m10">Attempting quiz - {{questions[0].quiz.title}}</h2>
-            </ng-container>
-            <mat-card *ngFor="let q of questions; let i = index" class="mt10">
-                <mat-card-content>
-                    <p><b>Q{{i+1}})&nbsp;&nbsp;</b><span [innerHTML]="q.content"></span></p>
-                    <mat-divider></mat-divider>
-                    <mat-radio-group aria-label="Select an option">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6 mt10" *ngIf="(q.option1.trim())==''||(q.option1)==null?false:true">
-                                    <mat-radio-button [value]="q.option1">{{q.option1}}</mat-radio-button>
-                                </div>
-                                <div class="col-md-6 mt10" *ngIf="(q.option2.trim())==''||(q.option2)==null?false:true">
-                                    <mat-radio-button [value]="q.option2">{{q.option2}}</mat-radio-button>
-                                </div>
-                                <div class="col-md-6 mt10" *ngIf="(q.option3.trim())==''||(q.option3)==null?false:true">
-                                    <mat-radio-button [value]="q.option3">{{q.option3}}</mat-radio-button>
-                                </div>
-                                <div class="col-md-6 mt10" *ngIf="(q.option4.trim())==''||(q.option4)==null?false:true">
-                                    <mat-radio-button [value]="q.option4">{{q.option4}}</mat-radio-button>
+        <div class="row">
+            <div class="col-md-2">
+                <!-- info panel -->
+            </div>
+            <div class="col-md-7">
+                <!-- quiz questions -->
+                <mat-card *ngIf="questions">
+                    <h2 class="mt10">Attempting quiz - {{questions[0].quiz.title}}</h2>
+                </mat-card>
+                <mat-card *ngFor="let q of questions; let i = index" class="mt10">
+                    <mat-card-content>
+                        <p><b>Q{{i+1}})&nbsp;&nbsp;</b><span [innerHTML]="q.content"></span></p>
+                        <mat-divider></mat-divider>
+                        <mat-radio-group aria-label="Select an option">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 mt10"
+                                        *ngIf="(q.option1.trim())==''||(q.option1)==null?false:true">
+                                        <mat-radio-button [value]="q.option1">{{q.option1}}</mat-radio-button>
+                                    </div>
+                                    <div class="col-md-6 mt10"
+                                        *ngIf="(q.option2.trim())==''||(q.option2)==null?false:true">
+                                        <mat-radio-button [value]="q.option2">{{q.option2}}</mat-radio-button>
+                                    </div>
+                                    <div class="col-md-6 mt10"
+                                        *ngIf="(q.option3.trim())==''||(q.option3)==null?false:true">
+                                        <mat-radio-button [value]="q.option3">{{q.option3}}</mat-radio-button>
+                                    </div>
+                                    <div class="col-md-6 mt10"
+                                        *ngIf="(q.option4.trim())==''||(q.option4)==null?false:true">
+                                        <mat-radio-button [value]="q.option4">{{q.option4}}</mat-radio-button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
+                        </mat-radio-group>
+                    </mat-card-content>
+                </mat-card>
+                <div class="container text-center mt20">
+                    <button mat-raised-button color="accent" (click)="submitQuiz()">Submit
+                        Quiz</button>
+                </div>
+            </div>
+            <div class="col-md-3 mt20">
+                <!-- timer -->
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            Time Left
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            Quiz will be auto submitted once time runs out
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-spinner>
 
-                            </div>
-                        </div>
-                    </mat-radio-group>
-                </mat-card-content>
-            </mat-card>
-            <div class="container text-center mt20">
-                <button mat-raised-button color="accent" (click)="submitQuiz()">Submit
-                    Quiz</button>
+                        </mat-spinner>
+                    </mat-card-content>
+                </mat-card>
             </div>
         </div>
-        <div class="col-md-2">
-
+    </div>
+    <!-- Show result -->
+    <div class="bootstrap-wrapper" *ngIf="!qId">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            Result for {{questions[0].quiz.title}} quiz
+                        </mat-card-title>
+                        <mat-card-content>
+                            <h3>Score :</h3>
+                            <h3>Questions attempted :</h3>
+                            <h3>Questions answers correctly :</h3>
+                        </mat-card-content>
+                        <div class=" container text-center">
+                            <button mat-raised-button color="accent" routerLink="/user-dashboard/">Home</button>
+                        </div>
+                    </mat-card-header>
+                </mat-card>
+            </div>
         </div>
     </div>
-</div>
-<!-- Show result -->
-<div class="bootstrap-wrapper" *ngIf="qId">
-    <div class="row">
-        <div class="col-md-6 offset-3">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        Result for {{questions[0].quiz.title}} quiz
-                    </mat-card-title>
-                    <mat-card-content>
-                        <h3>Score :</h3>
-                        <h3>Questions attempted :</h3>
-                        <h3>Questions answers correctly :</h3>
-                    </mat-card-content>
-                    <div class=" container text-center">
-                        <button mat-raised-button color="accent" routerLink="/user-dashboard/">Home</button>
-                    </div>
-                </mat-card-header>
-            </mat-card>
-        </div>
-    </div>
-</div>

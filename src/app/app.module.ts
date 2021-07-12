@@ -46,6 +46,7 @@ import { UserViewQuizzesInCategoryComponent } from './pages/user/user-view-quizz
 import { QuizInstructionsComponent } from './pages/user/quiz-instructions/quiz-instructions.component';
 import { QuizComponent } from './pages/user/quiz/quiz.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -97,6 +98,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatSelectModule,
     CKEditorModule,
     MatRadioModule,
+    MatProgressSpinnerModule,
   ],
   providers: [authInterceptorProviders, NormaluserGuard, AdminGuard],
   bootstrap: [AppComponent]
