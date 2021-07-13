@@ -16,6 +16,7 @@ export class QuizComponent implements OnInit {
   qId: any;
   timer: any;
   timerColor = "primary";
+  done = false;
 
   constructor(private locationSt: LocationStrategy, private _route: ActivatedRoute, private _question: QuestionService, private _snack: MatSnackBar) { }
 
@@ -54,6 +55,7 @@ export class QuizComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         //this._router.navigate(['/quiz/' + this.qId]);
+        this.evalQuiz();
       }
     })
   }
@@ -61,7 +63,7 @@ export class QuizComponent implements OnInit {
   startTimer() {
     let timeout = window.setInterval(() => {
       if (this.timer <= 0) {
-        this.submitQuiz();
+        this.evalQuiz();
         clearInterval(timeout);
       }
       else {
@@ -80,4 +82,8 @@ export class QuizComponent implements OnInit {
     return `${hr}: ${min}: ${sec}`
   }
 
+  evalQuiz() {
+    this.done = true;
+    console.log(this.done);
+  }
 }

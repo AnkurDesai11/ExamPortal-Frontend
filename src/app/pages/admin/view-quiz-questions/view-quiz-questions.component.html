@@ -3,6 +3,7 @@
         Questions of {{quizTitle}}
         <button mat-button color="accent" [routerLink]='"/admin-dashboard/add-question/"+quizId+"/"+quizTitle'>Add
             Question</button>
+        <button mat-button color="primary" [routerLink]='"/admin-dashboard/quizzes"'>Back</button>
     </mat-card-title>
 </mat-card>
 <mat-card *ngFor="let q of questions; let i = index">

@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper">
+<div class="bootstrap-wrapper" *ngIf="!done">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
@@ -62,25 +62,26 @@
             </div>
         </div>
     </div>
-    <!-- Show result -->
-    <div class="bootstrap-wrapper" *ngIf="!qId">
-        <div class="row">
-            <div class="col-md-6 offset-3">
-                <mat-card>
-                    <mat-card-header>
-                        <mat-card-title>
-                            Result for {{questions[0].quiz.title}} quiz
-                        </mat-card-title>
-                        <mat-card-content>
-                            <h3>Score :</h3>
-                            <h3>Questions attempted :</h3>
-                            <h3>Questions answers correctly :</h3>
-                        </mat-card-content>
-                        <div class=" container text-center">
-                            <button mat-raised-button color="accent" routerLink="/user-dashboard/">Home</button>
-                        </div>
-                    </mat-card-header>
-                </mat-card>
-            </div>
+</div>
+<!-- Show result -->
+<div class="bootstrap-wrapper" *ngIf="done">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Result for {{questions[0].quiz.title}} quiz
+                    </mat-card-title>
+                    <mat-card-content>
+                        <h3>Score :</h3>
+                        <h3>Questions attempted :</h3>
+                        <h3>Questions answers correctly :</h3>
+                    </mat-card-content>
+                    <div class=" container text-center">
+                        <button mat-raised-button color="accent" routerLink="/user-dashboard/">Home</button>
+                    </div>
+                </mat-card-header>
+            </mat-card>
         </div>
     </div>
+</div>
