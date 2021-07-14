@@ -38,4 +38,9 @@ export class QuestionService {
   public deleteQuestion(quesId: any) {
     return this._http.delete(`${baseUrl}/question/${quesId}`);
   }
+
+  //evaluate result on submit
+  public evaluateResult(questions: any) {
+    return this._http.post(`${baseUrl}/question/quiz/evaluate`, questions);
+  }
 }

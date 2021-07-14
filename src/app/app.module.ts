@@ -47,7 +47,7 @@ import { QuizInstructionsComponent } from './pages/user/quiz-instructions/quiz-i
 import { QuizComponent } from './pages/user/quiz/quiz.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { NgxUiLoaderRouterModule, NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 
 @NgModule({
   declarations: [

@@ -17,6 +17,9 @@ export class QuizComponent implements OnInit {
   timer: any;
   timerColor = "primary";
   done = false;
+  score: any;
+  attempts: any;
+  correctAnswers: any;
 
   constructor(private locationSt: LocationStrategy, private _route: ActivatedRoute, private _question: QuestionService, private _snack: MatSnackBar) { }
 
@@ -85,5 +88,18 @@ export class QuizComponent implements OnInit {
   evalQuiz() {
     this.done = true;
     console.log(this.done);
+    console.log(this.questions);
+    //server side result evaluation
+    this._question.evaluateResult(this.questions).subscribe(
+      (data: any) => {
+        //console.log(data);
+        this.score = data.score;
+        this.attempts = data.attempts;
+        this.correctAnswers = data.correctAnswers;
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 }
