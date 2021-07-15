@@ -20,6 +20,8 @@ export class QuizComponent implements OnInit {
   score: any;
   attempts: any;
   correctAnswers: any;
+  total: any;
+  percent: any;
 
   constructor(private locationSt: LocationStrategy, private _route: ActivatedRoute, private _question: QuestionService, private _snack: MatSnackBar) { }
 
@@ -31,6 +33,7 @@ export class QuizComponent implements OnInit {
         console.log(data);
         this.questions = data;
         this.timer = this.questions[0].quiz.totalTime * 60;
+        this.total = this.questions[0].quiz.maxMarks;
         this.startTimer();
       },
       (error) => {
@@ -93,7 +96,8 @@ export class QuizComponent implements OnInit {
     this._question.evaluateResult(this.questions).subscribe(
       (data: any) => {
         //console.log(data);
-        this.score = data.score;
+        this.score = parseFloat(Number(data.score).toFixed(2));
+        this.percent = parseFloat(Number((data.score / this.total) * 100).toFixed(2))
         this.attempts = data.attempts;
         this.correctAnswers = data.correctAnswers;
       },
@@ -102,4 +106,10 @@ export class QuizComponent implements OnInit {
       }
     )
   }
+
+  printPage() {
+    //can use file-saver library for better formatting
+    window.print();
+  }
+
 }
