@@ -1,7 +1,7 @@
 <div class="bootstrap-wrapper" *ngIf="!done">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 mt-20 mb-20">
+            <div class="col-md-3">
                 <!-- timer -->
                 <mat-card>
                     <mat-card-header>
@@ -19,11 +19,24 @@
                     </mat-card-content>
                 </mat-card>
                 <!-- info panel -->
+                <mat-card class="mt10 mb10">
+                    <mat-card-header>
+                        <mat-card-title>
+                            Instructions
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <ul>
+                            <li>Please do not open a new tab</li>
+                            <li>Please do not refresh the page</li>
+                        </ul>
+                    </mat-card-content>
+                </mat-card>
             </div>
             <div class="col-md-9">
                 <!-- quiz questions -->
                 <mat-card *ngIf="questions">
-                    <h2 class="mt10">Attempting quiz - {{questions[0].quiz.title}}</h2>
+                    <h2>Attempting quiz - {{questions[0].quiz.title}}</h2>
                 </mat-card>
                 <mat-card *ngFor="let q of questions; let i = index" class="mt10">
                     <mat-card-content>
