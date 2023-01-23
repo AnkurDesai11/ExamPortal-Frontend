@@ -1,27 +1,23 @@
-# Examportalgui
+# Exam Portal (frontonend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+This project is the Angular SPA frontend for the Exam Portal application which is an Angular + Spring Boot + MySql full stack application where users can answer timed quizzes along multiple categories. The application also has admin functionality where admins can add quiz categories and specific quizzes to the categories.Question can be individually added to quizzes. 
 
-## Development server
+Please refer to the backend Spring Boot service here - 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Bootstrap is used primarily for css with material UI.
 
-## Code scaffolding
+Users can access Landing Page, Signup, Login and Dashboard where they can check available quizzes by category and also attempt them.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Admins can access the quiz dashboard, Add category page and add quiz page. Further Add question page allows to add questions to quizzes w and admins can also edit existing quizzes/question.
 
-## Build
+Both users can access the user profile.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To communicate with the backend, httpclient module is used. Basic acces allows users to access landing page, user signup page and login page (unified for user and admin). After successful login and signup, user is provided with jwt token from backend with appropriate authorisation according to the credentials provided
 
-## Running unit tests
+Angular version 12
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Useful Commands
 
-## Running end-to-end tests
+`ng serve` - dev server on `http://localhost:4200/`. Server will be autortealoaded on changes.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`ng build` - build the project. The build artifacts will be stored in the `dist/` directory.
